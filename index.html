@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>jQuery.selectr - v1.0</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/layout_v2.css" />
+		
+		<link href="favicon.ico" rel="shortcut icon" />
+	</head>
+
+	<body>
+		
+		<div id="wrapper" class="clearfix">
+		
+			<aside>
+				<img src="assets/img/thumbnail.png" />
+				
+				<nav>
+					<ul>
+						<li><a href="#basic"><i>Basic use</i></a></li>
+						<li><a href="#highlight"><i>Changing class for highlighted rows</i></a></li>
+						<li><a href="#position"><i>Right/left position</i></a></li>
+						<li><a href="#count"><i>Setting a counter</i></a></li>
+						<li><a href="#checkMax"><i>Setting a maximum</i></a></li>
+						<li><a href="#callback"><i>Callback</i></a></li>
+						<li><a href="#prechecking"><i>Pre-checking</i></a></li>
+					</ul>
+				</nav>
+
+			</aside>
+		
+			<article>
+				<h1>jQuery.selectr <span>v 1.0</span></h1>
+		
+				<p>When applying this jQuery plugin to a table, a column is appended to each row allowing the visitor to check or uncheck a certain number of rows in a global way or individually.</p>
+				<p>A certain number of options is provided allowing, for instance, to limit the number of checkable rows or to provide a callback function when the maximum number of checked rows is reached.</p>
+				<p>All the ids of the checked rows are stored in a jQuery data object accessible by any jQuery function
+				you have eslewhere in your code.</p>
+			
+				<h2 id="basic">Basic use</h2>
+				
+				<p>The basic use .</p>
+
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$("table").selectr();</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table1">
+					<caption>Choose your favorite Star Wars movie(s) by clicking on the checkboxes ...</caption>
+					<thead>
+						<tr>
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr>
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr>
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr>
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr>
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h2 id="highlight">Changing class for highlighted rows</h2>
+				
+				<p>You can define the css class to be applied to the selected rows so that you can have specific styles for your different tables.</p>
+				
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$("#tableId").selectr({</code></li><!--
+	--><li><code>	<b>highlight: "classname"</b></code></li><!--
+	--><li><code>});</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table2">
+					<caption>These rows belong to the dark side ...</caption>
+					<thead>
+						<tr>
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr>
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr>
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr>
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr>
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 id="position">Right/left position</h2>
+				
+				<p>You can define the css class to be applied to the selected rows so that you can have specific styles for your different tables.</p>
+				
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$("#tableId").selectr({</code></li><!--
+	--><li><code>	<b>position: "right"/"left"</b></code></li><!--
+	--><li><code>});</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table3">
+					<caption>Vote for your two favorite Star Wars movie(s) by clicking on the checkboxes ...</caption>
+					<thead>
+						<tr>
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr>
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr>
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr>
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr>
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 id="count">Setting a counter</h2>
+				
+				<p>On big tables it might be useful to display the count of checked rows, this is done via the <b>count</b> option. You will need however to create a tfoot in your table in order to display the counter.</p>
+
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$("#tableId").selectr({</code></li><!--
+	--><li><code>	<b>count: true/false</b></code></li><!--
+	--><li><code>});</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table4">
+					<caption>Vote for your two favorite Star Wars movie(s) by clicking on the checkboxes ...</caption>
+					<thead>
+						<tr id="header">
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="anh">
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr id="tesb">
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr id="rotj">
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr id="tpm">
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr id="aotc">
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr id="rots">
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+						</tr>
+					</tfoot>
+				</table>
+
+				<h2 id="checkMax">Setting a maximum</h2>
+				
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+				
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$("table").selectr({</code></li><!--
+	--><li><code>	<b>checkMax: 2</b></code></li><!--
+	--><li><code>});</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table5">
+					<caption>Vote for your two favorite Star Wars movie(s) by clicking on the checkboxes ...</caption>
+					<thead>
+						<tr id="header">
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="anh">
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr id="esb">
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr id="rotj">
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr id="tpm">
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr id="aotc">
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr id="rots">
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+						</tr>
+					</tfoot>
+				</table>
+
+				<h2 id="callback">Providing a callback function</h2>
+				
+				<p>You can provide a callback function to be run on each click on the checkboxes or when the maximum number of checked checkboxes is reached. The second mode requires a value for <b>checkMax</b>.</p>
+
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$('#tableId').selectr({</code></li><!--
+	--><li><code>	checkMax: 3</code></li><!--
+	--><li><code>}<b>, function() {</b></code></li><!--
+	--><li><code>	<span class=code-comment>// here goes the code of your callback function</span></code></li><!--
+	--><li><code><b>}</b>);</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table6">
+					<caption>Vote for your two favorite Star Wars movie(s) by clicking on the checkboxes ...</caption>
+					<thead>
+						<tr id="header">
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="anh">
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr id="tesb">
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr id="rotj">
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr id="tpm">
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr id="aotc">
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr id="rots">
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+						</tr>
+					</tfoot>
+				</table>
+
+				<p>List of checked rows: <span id="table6List"></span></p>
+
+				<h2 id="prechecking">Pre-checking radioboxes</h2>
+				
+				<p>You can provide a callback function to be run on each click on the checkboxes or when the maximum number of checked checkboxes is reached. The second mode requires a value for <b>checkMax</b>.</p>
+
+<pre><!--
+--><ol class=line-numbers><!--
+	--><li><code>$('#tableId').selectr({</code></li><!--
+	--><li><code>	<b>list: [2,4,5]</b></code></li><!--
+	--><li><code>});</code></li><!--
+--></ol><!--
+--></pre>​
+
+				<table id="table7">
+					<caption>Vote for your two favorite Star Wars movie(s) by clicking on the checkboxes ...</caption>
+					<thead>
+						<tr id="header">
+							<th>N&#176;</th>
+							<th>Movie</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="anh">
+							<td>IV</td>
+							<td>A New Hope</td>
+							<td>25 May 1977</td>
+						</tr>
+						<tr id="tesb">
+							<td>V</td>
+							<td>The Empire Strikes Back</td>
+							<td>21 May 1980</td>
+						</tr>
+						<tr id="rotj">
+							<td>VI</td>
+							<td>Return of the Jedi</td>
+							<td>25 May 1983</td>
+						</tr>
+						<tr id="tpm">
+							<td>I</td>
+							<td>The Phantom Menace</td>
+							<td>19 May 1999</td>
+						</tr>
+						<tr id="aotc">
+							<td>II</td>
+							<td>Attack of the Clones</td>
+							<td>16 May 2002</td>
+						</tr>
+						<tr id="rots">
+							<td>III</td>
+							<td>Revenge of the Sith</td>
+							<td>19 May 2005</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<footer>
+					<p><i>Created by Neofyt&copy;2012.</i></p>
+				</footer>
+
+			</article>
+		
+		</div>
+		
+		<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.selectr.1.0.h.js"></script>
+		<!--<script type="text/javascript" src="https://raw.github.com/padolsey/jQuery-Lint/master/jquery.lint.js"></script>-->
+		<script type="text/javascript">
+			
+			$(document).ready(function() {
+
+				$('#table1').selectr();
+				
+				$('#table2').selectr({
+					highlight : "green"
+				});
+
+				$('#table3').selectr({
+					position: "left"
+				});
+
+				$('#table4').selectr({
+					count: true
+				});
+				
+				$('#table5').selectr({
+					checkMax: 2,
+					count: true
+				});
+
+				$('#table6').selectr({count: true, order: "by_click"}, function() {
+					$('#table6List').text($('#table6').data("checkedList").toString());
+				});
+
+				//$('#table7').selectr({count: true, callbackType: "loaded", list: ["anh","rotj","rots"]}, function() {
+				//	console.log("Specified table rows have been checked.");
+				//});
+
+				//$('#table7').selectr({count: true, callbackType: "loaded", list: [2,4,5]}, function() {
+				//	console.log("Specified table rows have been checked.");
+				//});
+
+				$('#table7').selectr({list: [2,4,5]});
+			});
+		</script>
+
+	</body>
+</html>

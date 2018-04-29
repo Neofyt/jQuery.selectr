@@ -1,0 +1,313 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License:  none (public domain)
+ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+* html .clearfix {
+	zoom: 1;
+}
+
+/* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+}
+
+/* IE7 */
+:focus {
+	outline: none;
+}
+
+/* Always display vetical scrollbar */
+html {
+	-ms-overflow-y: scroll;
+	overflow-y: scroll;
+}
+
+/****** BODY ******/
+body {
+	background: #f6f6f6 url("../img/generated.png") 0 0 repeat;
+	color: #656565;
+	font: 12px "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+	line-height: 20px;
+	text-shadow: white 1px 1px 1px;
+}
+
+body:before { /* top shadow */ 
+	content: ""; 
+	position: fixed; 
+	top: -10px; 
+	left: -10px; 
+	width: 110%; 
+	height: 10px;  
+	box-shadow: 0px 0px 10px rgba(0,0,0,.3);  
+	z-index: 100; 
+}
+
+#wrapper {
+	width: 800px;
+	margin: 40px auto 20px;
+	padding: 10px;
+}
+
+aside,article {
+	float: left;
+}
+
+aside {
+	width: 250px;
+	position: fixed;
+}
+
+article {
+	padding-left: 250px;
+}
+
+aside img {
+	background: #fafafa;
+	outline: solid 1px #ccc;
+	padding: 5px;
+
+	-webkit-box-shadow: 0 4px 4px -2px #aaa;
+	-moz-box-shadow: 0 4px 4px -2px #aaa;
+	box-shadow: 0 4px 4px -2px #aaa;
+}
+
+nav {
+	margin-top: 30px;
+}
+
+nav ul {
+	padding: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	margin: 7px 0;
+}
+
+nav ul li a {
+	padding: 0 10px;
+	text-decoration: none;
+	border-left: solid 5px #eee;
+	color: #656565;
+}
+
+nav ul li a:hover {
+	border-color: #656565;
+}
+
+/****** CONTAINER ******/
+h1,h2 {
+	font-size: 34px;
+	font-style: normal;
+	font-weight: 400;
+	text-shadow: none;
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 1.2;
+	pointer-events: none;
+	border-bottom: solid 5px #666;
+	margin-bottom: 50px;
+}
+
+h1 span {
+	font-size: 20px;
+	background-color: #666;
+	padding: 2px 5px;
+	float: right;
+	margin-top: 15px;
+	color: #fafafa;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+}
+
+h2 {
+	font-size: 20px;
+	padding: 5px 10px 0px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background: #666;
+	line-height: 20px;
+	margin: 100px 0 20px;
+	color: #fafafa;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+#preview,.infos {
+	display: inline;
+	float: left;
+}
+
+p {
+	text-align: justify;
+	text-indent: 20px;
+}
+
+pre,code {
+    font-family:"Inconsolata", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    text-shadow: 0 0 0;
+}
+pre{
+    padding:10px;
+    background-color:#eee;
+    overflow:auto;
+    margin: 20px 0;
+    border-left: solid 1px #999;
+}
+
+/**
+ * Add line numbers via an `ol`.
+ */
+.line-numbers{
+    list-style:decimal-leading-zero inside;
+    margin-left:0;
+}
+
+/*
+ * Set the colour of the bullets/numbers.
+ */
+.line-numbers{
+    color:#eee;
+}
+
+/*
+ * Make everything (back to) normal.
+ */
+pre,
+.line-numbers code{
+    color:#656565;
+}
+
+/*
+ * Make comments a little paler.
+ */
+.code-comment,
+.line-numbers li:hover{
+    color:#999;
+}
+
+b {
+	background: #eee;
+	color: #656565;
+	text-shadow: 0 0 0;
+	padding: 0 4px;
+}
+
+i, .code-comment {
+	font-style: italic;
+}
+
+/* TABLE */
+table {
+	width: 450px;
+	margin: 20px auto;
+	border: solid 1px #666;
+
+	-webkit-box-shadow: 0 4px 4px -2px #aaa;
+	-moz-box-shadow: 0 4px 4px -2px #aaa;
+	box-shadow: 0 4px 4px -2px #aaa;
+}
+
+caption {
+	font-style: italic;
+}
+
+th {
+	background: #666;
+	padding: 0 10px;
+	text-align: left;
+	text-shadow: 0 0 0;
+	border-bottom: solid 1px #666;
+	color: #fafafa;
+}
+
+tbody tr:nth-child(2n+1) {
+	background: #fff;
+}
+
+tr th:last-child,tr td:last-child {
+	text-align: right;
+}
+
+td {
+	padding: 2px 10px;
+}
+
+tfoot tr {
+	background: #fff;
+	border-top: solid 1px #ccc;
+}
+
+.highlighted td,td.highlighted, b {
+	background: #ffff88;
+}
+
+.green td,td.green {
+	background: #c8ffca;
+}
+
+[type=checkbox]{
+	cursor: pointer;
+}
+
+footer {
+	margin-top: 50px;
+}
+
+footer p {
+	text-align: right;
+	color: #bbb;
+
+}
